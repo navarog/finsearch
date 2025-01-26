@@ -1,0 +1,145 @@
+.card {
+    position: relative;
+    background-color: #d4e9ea;
+    container-type: inline-size;
+    border: 1px solid black;
+    border-radius: 1cqw;
+    aspect-ratio: 61 / 40;
+    width: 100%;
+    display: flex;
+}
+
+
+.name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20cqw;
+    max-width: 100%;
+    min-width: 100%;
+    margin-top: 3.5cqw;
+    height: fit-content;
+    line-height: 1em;
+    
+    .title {
+        font-family: Panforte Pro;
+        font-weight: 600;
+        font-size: 5.8cqw;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        position: relative;
+        max-width: 50cqw;
+
+        
+
+        .text-icon-container {
+            position: absolute;
+            left: 100%;
+            width: max-content;
+        }
+
+        :first-child.text-icon {
+            margin-left: 2.5cqw;
+        }
+
+        .text-icon {
+            height: 0.9em;
+            margin-left: 1cqw;
+        }
+    }
+
+    .latin {
+        font-size: 5cqw;
+        font-family: Dolce;
+    }
+}
+
+.cost {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 5cqw;
+    padding: 1cqw 1.5cqw 1cqw 3cqw;
+    left: 0;
+    top: 3cqw;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 5cqw 5cqw 0;
+    gap: 1cqw;
+    min-width: 6.5cqw;
+    justify-content: flex-end;
+}
+
+.zones {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 22.5cqw;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 5cqw 5cqw 0;
+    left:0;
+    top: 11.5cqw;
+    gap: 1cqw;
+    padding: 1cqw 1.5cqw 1cqw 3cqw;
+
+    img {
+        height: 6.5cqw;
+    }
+}
+
+.zones.tm {
+    justify-content: flex-end;
+}
+
+.zones.t {
+    justify-content: center;
+}
+
+.zones.m {
+    justify-content: flex-end;
+}
+
+.zones.sm {
+    justify-content: space-between;
+}
+
+.points {
+    font-family: Panforte Pro;
+    font-weight: 600;
+    position: absolute;
+    height: 7cqw;
+    left: 0;
+    top: 37cqw;
+    font-size: 7cqw;
+    margin-left: 3cqw;
+
+    img {
+        height: 100%;
+        position: relative;
+        top: 2cqw;
+        right: 2.5cqw;
+    }
+}
+
+.length {
+    font-family: Panforte Pro;
+    font-weight: 600;
+    line-height: 0.65em;
+    position: absolute;
+    height: 14cqw;
+    left: 0;
+    top: 50cqw;
+    font-size: 5cqw;
+    margin-left: 4cqw;
+    width: min-content;
+    overflow-y: hidden;
+    text-align: center;
+    padding-top: 0.35em;
+    
+    img {
+        height: 11cqw;
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 81.26 81.26">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-4" width="81.26" height="81.26"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="cls-4" d="m.04,40.64C.04,62.83,17.83,80.86,39.91,81.26h1.51c21.56-.39,39.02-17.58,39.84-39.04v-3.16C80.43,17.36,62.57.02,40.67.02S.04,18.21.04,40.64"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="-1.83" cy="-178.13" fx="-1.83" fy="-178.13" r=".96" gradientTransform="translate(118.43 -7532.21) scale(42.51 -42.51)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".11" stop-color="#f9fbfd"/>
+      <stop offset=".32" stop-color="#f5f8fd"/>
+      <stop offset=".34" stop-color="#ebeff5"/>
+      <stop offset=".56" stop-color="#8697aa"/>
+      <stop offset=".71" stop-color="#475f7a"/>
+      <stop offset=".79" stop-color="#2f4a68"/>
+      <stop offset="1" stop-color="#08162a"/>
+    </radialGradient>
+  </defs>
+  <g class="cls-3">
+    <g class="cls-1">
+      <rect class="cls-2" x=".04" y=".02" width="81.22" height="81.24"/>
+    </g>
+  </g>
+</svg>

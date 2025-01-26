@@ -1,0 +1,75 @@
+.search-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.MuiAccordion-rounded {
+  background-color: #f5f6f1!important;
+}
+
+.search-summary {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  margin-right: 10px;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 270px;
+}
+
+.search-count-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-count {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.3em;
+  font-family: "Panforte Pro", sans-serif;
+
+  img {
+    width: 1em;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.search-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .row {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 35px;
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+  }
+
+  .personality {
+    object-fit: contain;
+    object-position: 4px 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .search-container {
+    width: 50%;
+    min-width: 500px;
+    max-width: 700px;
+    margin: min(10vh, 100px) auto;
+  }
+}
