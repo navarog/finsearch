@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import "./Card.css";
 import WaveIcon from "../assets/icons/Wave.svg";
 
@@ -42,7 +42,7 @@ const getZoneIcons = (data) => {
 
   const icons = Object.keys(fields).reduce((acc, key) => {
     if (data[key]) {
-      if (key === "midnight" && data[key] == 2)
+      if (key === "midnight" && data[key] === 2)
         acc.push("PlayFishBottomRow")
       else
         acc.push(fields[key]);
