@@ -12,7 +12,7 @@ const getNameIcons = (data) => {
     return acc;
   }, []);
 
-  return icons.map((icon, index) => <img className="text-icon" key={index} src={require(`../assets/icons/${icon}.svg`)}></img>)
+  return icons.map((icon, index) => <img className="text-icon" key={index} src={require(`../assets/icons/${icon}.svg`)} alt={icon}></img>)
 }
 
 const getCostIcons = (data) => {
@@ -30,7 +30,7 @@ const getCostIcons = (data) => {
     return acc;
   }, []);
 
-  return icons.map((icon, index) => <img key={index} src={require(`../assets/icons/${icon}.svg`)}></img>)
+  return icons.map((icon, index) => <img key={index} src={require(`../assets/icons/${icon}.svg`)} alt={icon}></img>)
 }
 
 const getZoneIcons = (data) => {
@@ -50,7 +50,7 @@ const getZoneIcons = (data) => {
     return acc;
   }, []);
 
-  return icons.map((icon, index) => <img key={index} src={require(`../assets/icons/${icon}.svg`)}></img>)
+  return icons.map((icon, index) => <img key={index} src={require(`../assets/icons/${icon}.svg`)} alt={icon}></img>)
 }
 
 const getZoneClass = (data) => {
@@ -73,7 +73,7 @@ const getLengthIcon = (length) => {
   else
     icon = "Large";
 
-  return <img src={require(`../assets/icons/FishLength${icon}.svg`)}></img>
+  return <img src={require(`../assets/icons/FishLength${icon}.svg`)} alt={icon}></img>
 }
 
 

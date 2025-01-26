@@ -20,7 +20,6 @@
     min-width: 100%;
     margin-top: 3.5cqw;
     height: fit-content;
-    line-height: 1em;
     
     .title {
         font-family: Panforte Pro;
@@ -32,7 +31,7 @@
         text-align: center;
         position: relative;
         max-width: 50cqw;
-
+        line-height: 1em;
         
 
         .text-icon-container {
@@ -54,6 +53,7 @@
     .latin {
         font-size: 5cqw;
         font-family: Dolce;
+        line-height: 1em;
     }
 }
 

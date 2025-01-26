@@ -5,7 +5,7 @@ import {
   AccordionSummary,
   TextField,
   ThemeProvider,
-  Tooltip,
+  // Tooltip,
   createTheme,
 } from "@mui/material";
 import FlexSearch from "flexsearch";
@@ -102,7 +102,7 @@ function Search({ cardState, triggerSearch }) {
                 value={query.text}
                 onChange={(e) => setQuery({ ...query, text: e.target.value })}
                 onClick={(e) => e.stopPropagation()}
-                placeholder="Search the cards by its name"
+                placeholder="Search the cards by their names"
               />
               <div className="search-count-container">
                   <div
