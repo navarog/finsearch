@@ -1,6 +1,6 @@
 import React, { useReducer, useState, useMemo } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import "./App.css";
+import "./App.scss";
 import cards from "./assets/cards.json";
 import Card from "./card/Card";
 import Search, { handleSearch } from "./search/Search";

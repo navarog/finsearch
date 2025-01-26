@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import FlexSearch from "flexsearch";
 import { useEffect, useState, useMemo } from "react";
-import "./Search.css";
+import "./Search.scss";
 import FishFromHand from "../assets/icons/FishFromHand.svg";
 
 const cardIndex = FlexSearch.Document({

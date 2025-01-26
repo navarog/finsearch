@@ -1,5 +1,5 @@
 import React from "react";
-import "./Card.css";
+import "./Card.scss";
 import WaveIcon from "../assets/icons/Wave.svg";
 
 const getNameIcons = (data) => {
