@@ -65,10 +65,10 @@ const getZoneClass = (data) => {
 
 const getLengthIcon = (length) => {
   let icon = "Small"
-  
-  if(length < 50) 
+
+  if (length < 50)
     icon = "Small";
-  else if(length < 100)
+  else if (length < 150)
     icon = "Medium";
   else
     icon = "Large";
@@ -76,11 +76,43 @@ const getLengthIcon = (length) => {
   return <img src={require(`../assets/icons/FishLength${icon}.svg`)} alt={icon}></img>
 }
 
+const getCardBackground = (data) => {
+  const background = data.band || "base";
+  return require(`../assets/backgrounds/${background}.png`);
+}
+
+const processAbilityText = (text) => {
+  const parts = text.split(/(\d+ ?\[Wave\]|[a-zA-Z0-9 ()+]+|\[\w+\])/gi).filter(Boolean);
+  return parts.map((part, index) => {
+    if (part.includes("[Wave]"))
+      return <div key={index} className="ability-points">{part.split("[Wave]")[0].trim()}<img src={WaveIcon} alt="Wave"></img></div>
+
+    else if (part.includes("[")) {
+      part = part.slice(1, -1);
+      return <img className={part} key={index} src={require(`../assets/icons/${part}.svg`)} alt={part}></img>
+    }
+    return <div className="ability-text" key={index}>{part.trim()}</div>
+  })
+}
+
+const getAbility = (data) => {
+  const abilitiesWithBackground = ["IfActivated", "GameEnd"]
+  const style = {}
+  const abilityTexts = {
+    "IfActivated": "IF ACTIVATED:",
+    "GameEnd": "GAME END:",
+    "WhenPlayed": "WHEN PLAYED:"
+  }
+
+  if (abilitiesWithBackground.includes(data.abilityType))
+    style.backgroundImage = `url(${require(`../assets/backgrounds/${data.abilityType}.png`)})`
+  return <div className="ability" style={style}><div className="ability-text bold">{abilityTexts[data.abilityType]}</div> {processAbilityText(data.ability)}</div>
+}
 
 const Card = ({ data }) => {
 
   return (
-    <div className="card">
+    <div className="card" style={{ backgroundImage: `url(${getCardBackground(data)})` }}>
       <div className="name">
         <div className="title">
           {data.name}
@@ -97,8 +129,11 @@ const Card = ({ data }) => {
         <img src={WaveIcon} alt="points"></img>
       </div>
       <div className="length">{data.length} cm
-        {getLengthIcon(data.length)}</div>
-
+        {getLengthIcon(data.length)}
+      </div>
+      <div className="ability-container">
+        {getAbility(data)}
+      </div>
     </div>
   )
 };
