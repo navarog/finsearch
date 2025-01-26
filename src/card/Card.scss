@@ -7,6 +7,7 @@
     aspect-ratio: 61 / 40;
     width: 100%;
     display: flex;
+    overflow: hidden;
 }
 
 
@@ -128,13 +129,11 @@
     font-weight: 600;
     line-height: 0.65em;
     position: absolute;
-    height: 14cqw;
     left: 0;
-    top: 50cqw;
+    top: 48cqw;
     font-size: 5cqw;
     margin-left: 4cqw;
     width: min-content;
-    overflow-y: hidden;
     text-align: center;
     padding-top: 0.35em;
     
@@ -147,8 +146,8 @@
 .ability-container {
     position: relative;
     right: 28cqw;
-    padding-top: 5cqw;
-    height: 100%;
+    padding-top: 1cqw;
+    height: calc(100% - 1cqw);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -216,6 +215,10 @@
         .FishLengthSmall, .FishLengthMedium, .FishLengthLarge {
             height: 12cqw;
             margin-bottom: -1.5cqw;
+        }
+
+        .Discard, .DrawCard, .FishFromHand, .ConsumeFish, .ConsumeFish1, .ConsumeFish2, .ConsumeFish3 {
+            height: 8cqw;
         }
 
     }
