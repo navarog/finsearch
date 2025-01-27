@@ -134,6 +134,9 @@ const Card = ({ data }) => {
       <div className="ability-container">
         {getAbility(data)}
       </div>
+      <div className="description">
+        {data.description}
+      </div>
     </div>
   )
 };

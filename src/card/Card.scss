@@ -173,6 +173,7 @@
         .ability-text {
             font-weight: normal;
             padding-left: 4cqw;
+            text-wrap: balance;
         }
 
         .ability-text.bold {
@@ -222,4 +223,15 @@
         }
 
     }
+}
+
+.description {
+    position: absolute;
+    top: 50cqw;
+    left: 22cqw;
+    width: 50cqw;
+    font-family: Lexus Roman Optical;
+    font-size: 2.5cqw;
+    text-wrap: pretty;
+
 }
