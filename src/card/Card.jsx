@@ -110,7 +110,7 @@ const getAbility = (data) => {
 }
 
 const Card = ({ data }) => {
-// TODO: fix ConsumeFish icons, add description of the fish, and add some filters
+// TODO: add some filters
   return (
     <div className="card" style={{ backgroundImage: `url(${getCardBackground(data)})` }}>
       <div className="name">
