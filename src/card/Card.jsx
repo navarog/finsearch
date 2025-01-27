@@ -78,7 +78,7 @@ const getLengthIcon = (length) => {
 
 const getCardBackground = (data) => {
   const background = data.band || "base";
-  return require(`../assets/backgrounds/${background}.png`);
+  return require(`../assets/backgrounds/${background}.webp`);
 }
 
 const processAbilityText = (text) => {
