@@ -20,7 +20,8 @@ const getCostIcons = (data) => {
     "cardCost": "DrawCard",
     "eggCost": "FishEgg",
     "youngCost": "YoungFish",
-    "consuming": "ConsumeFish"
+    "consuming": "ConsumeFish",
+    "schoolFishCost": "SchoolFish"
   }
 
   const icons = Object.keys(fields).reduce((acc, key) => {
@@ -85,9 +86,9 @@ const processAbilityText = (text, matchRows = true) => {
   // Define the regex components
   const rowRegex = "\\[(?:[^\\[\\]]+)](?:\\s*\\+\\s*\\[[^\\[\\]]+])+";
   const iconRegex = "\\d+ ?\\[Wave\\]|[a-zA-Z0-9 ()\\+]+|\\[\\w+\\]";
-  const fullRegex = matchRows 
-      ? new RegExp(`(${rowRegex}|${iconRegex})`, "gi") 
-      : new RegExp(`(${iconRegex})`, "gi");
+  const fullRegex = matchRows
+    ? new RegExp(`(${rowRegex}|${iconRegex})`, "gi")
+    : new RegExp(`(${iconRegex})`, "gi");
 
   // Use the regex in the split
   const parts = text.split(fullRegex).filter(Boolean);
@@ -119,6 +120,18 @@ const getAbility = (data) => {
   return <div className="ability" style={style}><div className="ability-text bold">{abilityTexts[data.abilityType]}</div> {processAbilityText(data.ability)}</div>
 }
 
+const addGroupMarker = (data) => {
+  if (data.group === "starter")
+    return <>
+      <div className="corner-overlay top-left"></div>
+      <div className="corner-overlay bottom-right"></div>
+    </>
+
+  else
+    return <></>
+
+}
+
 const Card = ({ data }) => {
   // TODO: add some filters
   return (
@@ -147,6 +160,7 @@ const Card = ({ data }) => {
       <div className="description">
         {data.description}
       </div>
+      {addGroupMarker(data)}
     </div>
   )
 };

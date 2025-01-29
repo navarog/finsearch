@@ -5,13 +5,14 @@ import {
   AccordionSummary,
   TextField,
   ThemeProvider,
-  // Tooltip,
+  Tooltip,
   createTheme,
 } from "@mui/material";
 import FlexSearch from "flexsearch";
 import { useEffect, useState, useMemo } from "react";
 import "./Search.scss";
 import FishFromHand from "../assets/icons/FishFromHand.svg";
+import StarterIcon from "../assets/icons/StarterIcon.svg";
 
 const cardIndex = FlexSearch.Document({
   tokenize: "full",
@@ -105,12 +106,22 @@ function Search({ cardState, triggerSearch }) {
                 placeholder="Search the cards by their names"
               />
               <div className="search-count-container">
+                  <Tooltip title="Main cards">
                   <div
                     className="search-count"
                   >
                     {stats.group.main || 0}
                     <img src={FishFromHand} alt="Cards" />
+                  </div> 
+                  </Tooltip>
+                  <Tooltip title="Starter cards">                 
+                  <div
+                    className="search-count"
+                  >
+                    {stats.group.starter || 0}
+                    <img src={StarterIcon} alt="Starters" />
                   </div>
+                  </Tooltip>
               </div>
             </div>
           </AccordionSummary>
