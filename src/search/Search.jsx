@@ -83,6 +83,7 @@ function Search({ cardState, triggerSearch }) {
   const theme = createTheme({
     typography: {
       fontFamily: "Panforte Pro, sans-serif",
+      fontSize: 15,
     },
   });
 
