@@ -222,6 +222,28 @@
             height: 8cqw;
         }
 
+        .ability-row {
+            padding: 0 1cqw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            img {
+                max-height: 7cqw;
+                max-width: 8cqw;
+            }
+
+            .ability-text {
+                padding: 0 1cqw;
+                font-weight: bold;
+            }
+
+            .SchoolFish {
+                max-height: unset;
+                max-width: unset;
+            }
+        }
     }
 }
 

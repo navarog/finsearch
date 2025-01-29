@@ -81,10 +81,20 @@ const getCardBackground = (data) => {
   return require(`../assets/backgrounds/${background}.webp`);
 }
 
-const processAbilityText = (text) => {
-  const parts = text.split(/(\d+ ?\[Wave\]|[a-zA-Z0-9 ()+]+|\[\w+\])/gi).filter(Boolean);
+const processAbilityText = (text, matchRows = true) => {
+  // Define the regex components
+  const rowRegex = "\\[(?:[^\\[\\]]+)](?:\\s*\\+\\s*\\[[^\\[\\]]+])+";
+  const iconRegex = "\\d+ ?\\[Wave\\]|[a-zA-Z0-9 ()\\+]+|\\[\\w+\\]";
+  const fullRegex = matchRows 
+      ? new RegExp(`(${rowRegex}|${iconRegex})`, "gi") 
+      : new RegExp(`(${iconRegex})`, "gi");
+
+  // Use the regex in the split
+  const parts = text.split(fullRegex).filter(Boolean);
   return parts.map((part, index) => {
-    if (part.includes("[Wave]"))
+    if (part.match(rowRegex))
+      return <div className="ability-row">{processAbilityText(part, false)}</div>
+    else if (part.includes("[Wave]"))
       return <div key={index} className="ability-points">{part.split("[Wave]")[0].trim()}<img src={WaveIcon} alt="Wave"></img></div>
 
     else if (part.includes("[")) {
@@ -110,7 +120,7 @@ const getAbility = (data) => {
 }
 
 const Card = ({ data }) => {
-// TODO: add some filters
+  // TODO: add some filters
   return (
     <div className="card" style={{ backgroundImage: `url(${getCardBackground(data)})` }}>
       <div className="name">
