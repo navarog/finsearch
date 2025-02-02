@@ -11,8 +11,20 @@ import {
 import FlexSearch from "flexsearch";
 import { useEffect, useState, useMemo } from "react";
 import "./Search.scss";
+
 import FishFromHand from "../assets/icons/FishFromHand.svg";
 import StarterIcon from "../assets/icons/StarterIcon.svg";
+import LengthSmall from "../assets/icons/FishLengthSmall.svg";
+import LengthMedium from "../assets/icons/FishLengthMedium.svg";
+import LengthLarge from "../assets/icons/FishLengthLarge.svg";
+import Sunlight from "../assets/icons/Sun.svg";
+import Twilight from "../assets/icons/Dusk.svg";
+import Midnight from "../assets/icons/Night.svg";
+import Bioluminescent from "../assets/icons/Bioluminescent.svg";
+import Camouflage from "../assets/icons/Camouflage.svg";
+import Electric from "../assets/icons/Electric.svg";
+import Predator from "../assets/icons/Predator.svg";
+import Venomous from "../assets/icons/Venomous.svg";
 
 const cardIndex = FlexSearch.Document({
   tokenize: "full",
@@ -33,19 +45,44 @@ const fields = [
   "length",
 ];
 
+const filterLength = (query, length) => {
+  let size = "small";
+
+  if (length < 50)
+    size = "small";
+  else if (length < 150)
+    size = "medium";
+  else
+    size = "large";
+
+  return query[size];
+}
+
+const filterZones = (query, card) => {
+  return Object.keys(query).reduce((acc, key) =>
+    acc && (query[key] || (!query[key] && !card[key])), true
+  )
+}
+
+const filterTags = (query, card) => {
+  return Object.keys(query).reduce((acc, key) =>
+    acc && (!query[key] || card[key]), true
+  )
+}
+
 export function handleSearch(state, query) {
   const searchedIds = query.text
     ? [
-        ...new Set(
-          cardIndex
-            .search(query.text)
-            .reduce((acc, item) => [...acc, ...item.result], [])
-        ),
-      ]
+      ...new Set(
+        cardIndex
+          .search(query.text)
+          .reduce((acc, item) => [...acc, ...item.result], [])
+      ),
+    ]
     : Object.values(state.allCards).map((card) => card.id);
   const filteredIds = searchedIds.filter((id) => {
     const card = state.allCards[id];
-    return query.group[card.group]; // TODO: filter for the future
+    return query.group[card.group] && filterLength(query.length, card.length) && filterZones(query.zones, card) && filterTags(query.tags, card);
   });
 
   return { ...state, filteredCardIds: filteredIds.sort((a, b) => a - b) };
@@ -58,6 +95,23 @@ function Search({ cardState, triggerSearch }) {
       main: true,
       starter: true,
     },
+    length: {
+      small: true,
+      medium: true,
+      large: true,
+    },
+    zones: {
+      sunlight: true,
+      twilight: true,
+      midnight: true
+    },
+    tags: {
+      Bioluminescent: false,
+      Camouflage: false,
+      Electric: false,
+      Predator: false,
+      Venomous: false
+    }
   };
   const [query, setQuery] = useState(defaultQuery);
 
@@ -107,96 +161,212 @@ function Search({ cardState, triggerSearch }) {
                 placeholder="Search the cards by their names"
               />
               <div className="search-count-container">
-                  <Tooltip title="Main cards">
+                <Tooltip title="Main cards">
                   <div
-                    className="search-count"
+                    className={`search-count ${query.group.main ? "" : "disabled"
+                      }`}
+                    onClick={(e) => {
+                      setQuery({
+                        ...query,
+                        group: { ...query.group, main: !query.group.main },
+                      });
+                      e.stopPropagation();
+                    }}
                   >
                     {stats.group.main || 0}
                     <img src={FishFromHand} alt="Cards" />
-                  </div> 
-                  </Tooltip>
-                  <Tooltip title="Starter cards">                 
+                  </div>
+                </Tooltip>
+                <Tooltip title="Starter cards">
                   <div
-                    className="search-count"
+                    className={`search-count ${query.group.starter ? "" : "disabled"
+                      }`}
+                    onClick={(e) => {
+                      setQuery({
+                        ...query,
+                        group: { ...query.group, starter: !query.group.starter },
+                      });
+                      e.stopPropagation();
+                    }}
                   >
                     {stats.group.starter || 0}
                     <img src={StarterIcon} alt="Starters" />
                   </div>
-                  </Tooltip>
+                </Tooltip>
               </div>
             </div>
           </AccordionSummary>
           <AccordionDetails>
-            {/* <div className="search-details">
-              <Tooltip title="Filter out cards by personality">
-                <div className="row">
+            <div className="search-details">
+              <Tooltip title="Filter out cards by zones">
+                <div className="row zones-row">
                   <img
-                    src={Shy}
-                    alt="Shy"
-                    className={`personality ${
-                      query.personality.Shy ? "" : "disabled"
-                    }`}
+                    src={Sunlight}
+                    alt="Sunlight"
+                    className={`zone ${query.zones.sunlight ? "" : "disabled"
+                      }`}
                     onClick={(e) =>
                       setQuery({
                         ...query,
-                        personality: {
-                          ...query.personality,
-                          Shy: !query.personality.Shy,
+                        zones: {
+                          ...query.zones,
+                          sunlight: !query.zones.sunlight,
                         },
                       })
                     }
                   />
                   <img
-                    src={Playful}
-                    alt="Playful"
-                    className={`personality ${
-                      query.personality.Playful ? "" : "disabled"
-                    }`}
+                    src={Twilight}
+                    alt="Twilight"
+                    className={`zone ${query.zones.twilight ? "" : "disabled"
+                      }`}
                     onClick={(e) =>
                       setQuery({
                         ...query,
-                        personality: {
-                          ...query.personality,
-                          Playful: !query.personality.Playful,
+                        zones: {
+                          ...query.zones,
+                          twilight: !query.zones.twilight,
                         },
                       })
                     }
                   />
                   <img
-                    src={Helpful}
-                    alt="Helpful"
-                    className={`personality ${
-                      query.personality.Helpful ? "" : "disabled"
-                    }`}
+                    src={Midnight}
+                    alt="Midnight"
+                    className={`zone ${query.zones.midnight ? "" : "disabled"
+                      }`}
                     onClick={(e) =>
                       setQuery({
                         ...query,
-                        personality: {
-                          ...query.personality,
-                          Helpful: !query.personality.Helpful,
-                        },
-                      })
-                    }
-                  />
-                  <img
-                    src={Aggressive}
-                    alt="Aggressive"
-                    className={`personality ${
-                      query.personality.Aggressive ? "" : "disabled"
-                    }`}
-                    onClick={(e) =>
-                      setQuery({
-                        ...query,
-                        personality: {
-                          ...query.personality,
-                          Aggressive: !query.personality.Aggressive,
+                        zones: {
+                          ...query.zones,
+                          midnight: !query.zones.midnight,
                         },
                       })
                     }
                   />
                 </div>
               </Tooltip>
-            </div> */}
+              <Tooltip title="Filter out cards by tags">
+                <div className="row tags-row">
+                  <img
+                    src={Bioluminescent}
+                    alt="Bioluminescent"
+                    className={`tag ${query.tags.Bioluminescent ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        tags: {
+                          ...query.tags,
+                          Bioluminescent: !query.tags.Bioluminescent,
+                        },
+                      })
+                    }
+                  />
+                  <img
+                    src={Camouflage}
+                    alt="Camouflage"
+                    className={`tag ${query.tags.Camouflage ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        tags: {
+                          ...query.tags,
+                          Camouflage: !query.tags.Camouflage,
+                        },
+                      })
+                    }
+                  />
+                  <img
+                    src={Electric}
+                    alt="Electric"
+                    className={`tag ${query.tags.Electric ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        tags: { ...query.tags, Electric: !query.tags.Electric },
+                      })
+                    }
+                  />
+                  <img
+                    src={Predator}
+                    alt="Predator"
+                    className={`tag ${query.tags.Predator ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        tags: { ...query.tags, Predator: !query.tags.Predator },
+                      })
+                    }
+                  />
+                  <img
+                    src={Venomous}
+                    alt="Venomous"
+                    className={`tag ${query.tags.Venomous ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        tags: { ...query.tags, Venomous: !query.tags.Venomous },
+                      })
+                    }
+                  />
+                </div>
+              </Tooltip>
+              <Tooltip title="Filter out cards by length">
+                <div className="row length-row">
+                  <img
+                    src={LengthSmall}
+                    alt="Small"
+                    className={`fish-length ${query.length.small ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        length: {
+                          ...query.length,
+                          small: !query.length.small,
+                        },
+                      })
+                    }
+                  />
+                  <img
+                    src={LengthMedium}
+                    alt="Medium"
+                    className={`fish-length ${query.length.medium ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        length: {
+                          ...query.length,
+                          medium: !query.length.medium,
+                        },
+                      })
+                    }
+                  />
+                  <img
+                    src={LengthLarge}
+                    alt="Large"
+                    className={`fish-length ${query.length.large ? "" : "disabled"
+                      }`}
+                    onClick={(e) =>
+                      setQuery({
+                        ...query,
+                        length: {
+                          ...query.length,
+                          large: !query.length.large,
+                        },
+                      })
+                    }
+                  />
+                </div>
+              </Tooltip>
+            </div>
           </AccordionDetails>
         </Accordion>
       </div>

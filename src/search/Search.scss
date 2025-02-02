@@ -7,6 +7,10 @@
   background-color: #f5f6f1!important;
 }
 
+.MuiCollapse-wrapper {
+  overflow: hidden;
+}
+
 .search-summary {
   display: inline-flex;
   justify-content: space-between;
@@ -44,24 +48,47 @@
 
 .search-details {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: -10px;
+  column-gap: 30px;
+  row-gap: 10px;
+  flex-wrap: wrap;
 
   .row {
     display: flex;
     align-items: center;
+    gap: 10px;
 
     img {
-      max-height: 35px;
       flex: 0 1 auto;
       min-width: 0;
       max-width: 100%;
+      cursor: pointer;
     }
   }
 
-  .personality {
-    object-fit: contain;
-    object-position: 4px 0;
+}
+
+.zones-row {
+  width: 110px;
+  img {
+    max-height: 25px;
+  }
+}
+
+.tags-row {
+  width: 160px;
+  img: {
+    max-height: 25px;
+  }
+}
+
+.length-row {
+  margin-bottom: -12px;
+  width: 110px;
+  img {
+    max-height: 35px;
   }
 }
 
