@@ -216,6 +216,7 @@ const Card = ({ data }) => {
       <div className="ability-container">
         {getAbility(data)}
       </div>
+      <img className="silhouette" src={require(`../assets/silhouettes/${data.id}.webp`)} alt="Fish silhouette"></img>
       <div className="description">
         {data.description}
       </div>

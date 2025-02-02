@@ -260,6 +260,14 @@
 
 }
 
+.silhouette {
+    position: absolute;
+    top: 19cqw;
+    left: 22cqw;
+    max-width: 48cqw;
+    max-height: 34cqw;
+}
+
 .corner-overlay {
     position: absolute;
     width: 7.5cqw;
@@ -267,14 +275,14 @@
     background-color: #707176;
   }
   
-  .top-left {
+.top-left {
     top: -1px;
     left: -1px;
     clip-path: polygon(0 0, 0% 100%, 100% 0);
-  }
-  
-  .bottom-right {
+}
+
+.bottom-right {
     bottom: -1px;
     right: -1px;
     clip-path: polygon(100% 100%, 0 100%, 100% 0);
-  }
+}
