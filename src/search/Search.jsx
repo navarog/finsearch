@@ -30,7 +30,7 @@ const cardIndex = FlexSearch.Document({
   tokenize: "full",
   document: {
     id: "id",
-    index: ["name", "latin", "description"],
+    index: ["name", "latin", "description", "ability"],
   },
 });
 
@@ -42,7 +42,6 @@ import("../assets/cards.json").then((cards) => {
 
 const fields = [
   "group",
-  "length",
 ];
 
 const filterLength = (query, length) => {
@@ -198,6 +197,7 @@ function Search({ cardState, triggerSearch }) {
           </AccordionSummary>
           <AccordionDetails>
             <div className="search-details">
+              {/* TODO: show counts for each filter by using stats */}
               <Tooltip title="Filter out cards by zones">
                 <div className="row zones-row">
                   <img
