@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Card.scss";
 import WaveIcon from "../assets/icons/Wave.svg";
 
@@ -132,14 +132,73 @@ const addGroupMarker = (data) => {
 
 }
 
+
+const measureFirstLineWidth = (element) => {
+  if (!element) return 0;
+
+  // Create a range to measure the text
+  const range = document.createRange();
+  const text = element.childNodes[0]; // Get the text node
+  
+  if (!text) return 0;
+
+  // Find the index where the line breaks
+  let low = 0;
+  let high = text.length;
+  let mid;
+  
+  while (low < high) {
+    mid = Math.floor((low + high + 1) / 2);
+    range.setStart(text, 0);
+    range.setEnd(text, mid);
+    const rects = range.getClientRects();
+    
+    // If we have more than one rect, we've gone too far
+    if (rects.length > 1) {
+      high = mid - 1;
+    } else {
+      low = mid;
+    }
+  }
+
+  // Measure the final width
+  range.setStart(text, 0);
+  range.setEnd(text, low);
+  const rects = range.getClientRects();
+  
+  return rects.length > 0 ? rects[0].width : 0;
+};
+
 const Card = ({ data }) => {
-  // TODO: add some filters
+  const containerRef = useRef(null);
+  const [firstLineWidth, setFirstLineWidth] = useState(0);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      const width = measureFirstLineWidth(containerRef.current);
+      setFirstLineWidth(width);
+    };
+
+    // Initial measurement
+    updateWidth();
+
+    // Add resize observer to handle window/container size changes
+    const resizeObserver = new ResizeObserver(updateWidth);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   return (
     <div className="card" style={{ backgroundImage: `url(${getCardBackground(data)})` }}>
       <div className="name">
-        <div className="title">
+        <div className="title" ref={containerRef}>
           {data.name}
-          <div className="text-icon-container">
+          <div className="text-icon-container" style={{left: `calc(50cqw + 0.5 * ${firstLineWidth}px)`}}>
             {getNameIcons(data)}
           </div>
         </div>
@@ -162,7 +221,6 @@ const Card = ({ data }) => {
       </div>
       {addGroupMarker(data)}
     </div>
-  )
+  );
 };
-
 export default Card;

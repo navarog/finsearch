@@ -30,19 +30,17 @@
         display: flex;
         flex-direction: row;
         text-align: center;
-        position: relative;
-        max-width: 50cqw;
+        max-width: 48cqw;
         line-height: 1em;
         
 
         .text-icon-container {
             position: absolute;
-            left: 100%;
             width: max-content;
         }
 
         :first-child.text-icon {
-            margin-left: 2.5cqw;
+            margin-left: 2cqw;
         }
 
         .text-icon {
@@ -71,6 +69,10 @@
     gap: 1cqw;
     min-width: 6.5cqw;
     justify-content: flex-end;
+
+    img {
+        max-width: 7cqw;
+    }
 }
 
 .zones {
