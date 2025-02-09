@@ -3,14 +3,14 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  TextField,
   ThemeProvider,
   Tooltip,
   createTheme,
 } from "@mui/material";
 import FlexSearch from "flexsearch";
 import { useEffect, useState, useMemo } from "react";
-import EmojiTextField from "./EmojiTextField";
+import EmojiTextField, { ALLOWED_EMOJIS } from "./EmojiTextField";
+import EmojiButton from "./EmojiButton";
 import "./Search.scss";
 
 import FishFromHand from "../assets/icons/FishFromHand.svg";
@@ -151,13 +151,13 @@ function Search({ cardState, triggerSearch }) {
             id="panel1-header"
           >
             <div className="search-summary">
-            <EmojiTextField
-                query={query}
-                setQuery={setQuery}
-                label="Search the cards"
-                placeholder="Search the cards by their names"
-                onClick={(e) => e.stopPropagation()}
-              />
+                <EmojiTextField
+                  query={query}
+                  setQuery={setQuery}
+                  label="Search the cards"
+                  placeholder="Search the cards by their names"
+                  onClick={(e) => e.stopPropagation()}
+                />
               <div className="search-count-container">
                 <Tooltip title="Main cards">
                   <div
@@ -195,6 +195,15 @@ function Search({ cardState, triggerSearch }) {
             </div>
           </AccordionSummary>
           <AccordionDetails>
+            Filter by the abilities
+            <Tooltip title="Search by the icons in the ability powers">
+              <div className="emoji-row">
+                {ALLOWED_EMOJIS.map((emoji, index) => (
+                  <EmojiButton key={index} query={query} setQuery={setQuery} icon={emoji} />
+                ))}
+              </div>
+            </Tooltip>
+            Filter by the fish characteristics
             <div className="search-details">
               {/* TODO: show counts for each filter by using stats */}
               <Tooltip title="Filter out cards by zones">
