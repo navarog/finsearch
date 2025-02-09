@@ -1,0 +1,42 @@
+// styles.scss
+.emoji-textfield-container {
+  position: relative;
+  width: 100%;
+
+  .rendered-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    white-space: pre-wrap;
+    font-family: inherit;
+    font-size: 1.07em;
+    padding: 4px 0 6px 0;
+    line-height: inherit;
+  }
+
+  .emoji-marker {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 2px;
+    vertical-align: middle;
+    height: 24px;  // Fixed height to align with text
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    // Hide the emoji text
+    span {
+      display: none;
+    }
+  }
+
+  // Make the input visible but semi-transparent
+  .MuiInputBase-input {
+    caret-color: black !important; // Make cursor visible
+    color: rgba(0, 0, 0, 0) !important; // Make text slightly visible for better UX
+  }
+}

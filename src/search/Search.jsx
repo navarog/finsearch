@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import FlexSearch from "flexsearch";
 import { useEffect, useState, useMemo } from "react";
+import EmojiTextField from "./EmojiTextField";
 import "./Search.scss";
 
 import FishFromHand from "../assets/icons/FishFromHand.svg";
@@ -150,14 +151,12 @@ function Search({ cardState, triggerSearch }) {
             id="panel1-header"
           >
             <div className="search-summary">
-              <TextField
-                variant="standard"
+            <EmojiTextField
+                query={query}
+                setQuery={setQuery}
                 label="Search the cards"
-                className="search-input"
-                value={query.text}
-                onChange={(e) => setQuery({ ...query, text: e.target.value })}
-                onClick={(e) => e.stopPropagation()}
                 placeholder="Search the cards by their names"
+                onClick={(e) => e.stopPropagation()}
               />
               <div className="search-count-container">
                 <Tooltip title="Main cards">
