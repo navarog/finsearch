@@ -43,6 +43,7 @@ import("../assets/cards.json").then((cards) => {
 
 const fields = [
   "group",
+  "expansion",
 ];
 
 const filterLength = (query, length) => {
@@ -82,7 +83,7 @@ export function handleSearch(state, query) {
     : Object.values(state.allCards).map((card) => card.id);
   const filteredIds = searchedIds.filter((id) => {
     const card = state.allCards[id];
-    return query.group[card.group] && filterLength(query.length, card.length) && filterZones(query.zones, card) && filterTags(query.tags, card);
+    return query.group[card.group] && filterLength(query.length, card.length) && filterZones(query.zones, card) && filterTags(query.tags, card) && query.expansion[card.expansion];
   });
 
   return { ...state, filteredCardIds: filteredIds.sort((a, b) => a - b) };
@@ -94,6 +95,10 @@ function Search({ cardState, triggerSearch }) {
     group: {
       main: true,
       starter: true,
+    },
+    expansion: {
+      base: true,
+      sr: true,
     },
     length: {
       small: true,
@@ -372,6 +377,28 @@ function Search({ cardState, triggerSearch }) {
                       })
                     }
                   />
+                </div>
+              </Tooltip>
+              <Tooltip title="Filter by expansion">
+                <div className="row expansion-row">
+                  <div
+                    className={`expansion-filter ${query.expansion.base ? "" : "disabled"}`}
+                    onClick={() => setQuery({
+                      ...query,
+                      expansion: { ...query.expansion, base: !query.expansion.base }
+                    })}
+                  >
+                    Base ({stats.expansion?.base || 0})
+                  </div>
+                  <div
+                    className={`expansion-filter ${query.expansion.sr ? "" : "disabled"}`}
+                    onClick={() => setQuery({
+                      ...query,
+                      expansion: { ...query.expansion, sr: !query.expansion.sr }
+                    })}
+                  >
+                    S&amp;R ({stats.expansion?.sr || 0})
+                  </div>
                 </div>
               </Tooltip>
             </div>

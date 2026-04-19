@@ -1,0 +1,659 @@
+[
+  {
+    "card_id": 136,
+    "card_name": "American Pocket Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 137,
+    "card_name": "Angular Roughshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 138,
+    "card_name": "Armored Searobin",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 139,
+    "card_name": "Atlantic Thornyhead",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 140,
+    "card_name": "Basking Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 141,
+    "card_name": "Blackmouth Angler",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 142,
+    "card_name": "Blacktip Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 143,
+    "card_name": "Blue Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 144,
+    "card_name": "Bluering Angelfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 145,
+    "card_name": "Bonnethead Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 146,
+    "card_name": "Broadnose Sevengill Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 147,
+    "card_name": "Common Bluestripe Snapper",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 148,
+    "card_name": "Daggertooth",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 149,
+    "card_name": "Dusky Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 150,
+    "card_name": "Dwarf Lanternshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 151,
+    "card_name": "Epaulette Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 152,
+    "card_name": "Filetail Catshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 153,
+    "card_name": "Fire Dartfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 154,
+    "card_name": "Flame Angelfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 155,
+    "card_name": "Foxface Rabbitfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 156,
+    "card_name": "Frilled Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 157,
+    "card_name": "Furry Coffinfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 158,
+    "card_name": "Ghostly Seadevil",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 159,
+    "card_name": "Giant Moray",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 160,
+    "card_name": "Goblin Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 161,
+    "card_name": "Great Barracuda",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 162,
+    "card_name": "Great Hammerhead",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 163,
+    "card_name": "Gray Reef Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 164,
+    "card_name": "Gulper Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 165,
+    "card_name": "Indian Sail-fin Surgeonfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 166,
+    "card_name": "Jensen's Skate",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 167,
+    "card_name": "Kitefin Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 168,
+    "card_name": "Lemon Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 169,
+    "card_name": "Leopard Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 170,
+    "card_name": "Lollipop Catshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 171,
+    "card_name": "Longnose Hawkfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 172,
+    "card_name": "Malabar Grouper",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 173,
+    "card_name": "Megamouth Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 174,
+    "card_name": "Mimic Goatfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 175,
+    "card_name": "Moorish Idol",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 176,
+    "card_name": "Ninja Lanternshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 177,
+    "card_name": "Nurse Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 178,
+    "card_name": "Owlfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 179,
+    "card_name": "Portuguese Dogfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 180,
+    "card_name": "Prickly Anglerfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 181,
+    "card_name": "Red-lipped Batfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 182,
+    "card_name": "Reef Triggerfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 183,
+    "card_name": "Ribbon Sawtail Fish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 184,
+    "card_name": "Ribboned Sweetlips",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 185,
+    "card_name": "Rose-veiled Fairy Wrasse",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 186,
+    "card_name": "Rough Abyssal Grenadier",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 187,
+    "card_name": "Roving Coral Grouper",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 188,
+    "card_name": "Sablefish",
+    "status": "css_issues",
+    "issues": [
+      {
+        "severity": "medium",
+        "category": "ability_icons",
+        "description": "The third [PurpleCoral] icon in the 'also, if' conditional section is not visible in the webapp. The JSON correctly encodes [PurpleCoral][PurpleCoral][PurpleCoral], and the PDF shows all three, but only two are rendered. The '.also-if' ability box appears to clip or overflow the third icon due to insufficient height or the outer ability-container layout constraints.",
+        "expected": "3 purple coral icons visible in the 'also, if' section",
+        "actual": "Only 2 purple coral icons visible; third is clipped/hidden"
+      }
+    ],
+    "fixes_applied": [],
+    "css_issues": [
+      {
+        "severity": "medium",
+        "file": "src/card/Card.scss",
+        "selector": ".ability-container .ability.also-if",
+        "current_value": "padding: 1cqw 0 1cqw 0; gap: 0.7cqw; img { height: 5cqw; max-height: 5cqw; }",
+        "suggested_value": "Consider increasing min-height or allowing the also-if box to grow; or reduce img height to 4cqw when 3+ icons are present to ensure all icons fit without clipping",
+        "description": "The 'also, if' conditional box clips the third coral icon when 3 icons are stacked. The combined height of 3 icons (3\u00d75cqw) + gaps (2\u00d70.7cqw) + padding (2\u00d71cqw) \u2248 18.4cqw may exceed available space in the right-side ability column due to the card's aspect ratio and two-box IfActivated layout. Either the min-height of the also-if section should be increased, or the icon size should be reduced slightly to ensure all icons remain visible."
+      }
+    ]
+  },
+  {
+    "card_id": 189,
+    "card_name": "Sand Tiger Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 190,
+    "card_name": "Sarcastic Fringehead",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 191,
+    "card_name": "Shortfin Mako",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 192,
+    "card_name": "Shortnose Demon Catshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 193,
+    "card_name": "Sixgill Sawshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 194,
+    "card_name": "Spotted Scat",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 195,
+    "card_name": "Spotted Wobbegong",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 196,
+    "card_name": "Starry Pipefish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 197,
+    "card_name": "Stellate Puffer",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 198,
+    "card_name": "Striated Frogfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 199,
+    "card_name": "Striped Eel Catfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 200,
+    "card_name": "Swell Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 201,
+    "card_name": "Sydney's Pygmy Pipehorse",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 202,
+    "card_name": "Tasseled Scorpionfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 203,
+    "card_name": "Tiger Shark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 204,
+    "card_name": "Tomato Clownfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 205,
+    "card_name": "Toothy Goby",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 206,
+    "card_name": "Variegated Lizardfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 207,
+    "card_name": "Velvet Belly Lanternshark",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 208,
+    "card_name": "Yellow Clown Goby",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 209,
+    "card_name": "Yokozuna Slickhead",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 210,
+    "card_name": "Zebra Seahorse",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 211,
+    "card_name": "African Coelacanth",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 212,
+    "card_name": "Atlantic Barracudina",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 213,
+    "card_name": "Blue Antimora",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 214,
+    "card_name": "Fanfin Anglerfish",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  },
+  {
+    "card_id": 215,
+    "card_name": "Illuminated Netdevil",
+    "status": "ok",
+    "issues": [],
+    "fixes_applied": [],
+    "css_issues": []
+  }
+]

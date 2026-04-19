@@ -105,6 +105,19 @@
   }
 }
 
+.expansion-row {
+  align-items: center;
+}
+
+.expansion-filter {
+  cursor: pointer;
+  font-size: 0.9em;
+  font-family: "Panforte Pro", sans-serif;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+}
+
 .emoji-row {
   width: 100%;
   display: flex;
@@ -118,5 +131,11 @@
     max-width: 28px;
     max-height: 25px;
     cursor: pointer;
+  }
+
+  .UnSchoolFish {
+    max-width: 35px;
+    max-height: 35px;
+    margin: 0 -7px;
   }
 }

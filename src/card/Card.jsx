@@ -31,6 +31,9 @@ const getCostIcons = (data) => {
     return acc;
   }, []);
 
+  if (icons.length === 0)
+    icons.push('NoCost');
+
   return icons.map((icon, index) => <img key={index} src={require(`../assets/icons/${icon}.svg`)} alt={icon}></img>)
 }
 
@@ -50,6 +53,21 @@ const getZoneIcons = (data) => {
     }
     return acc;
   }, []);
+
+  if (data.coralCost) {
+    const [coralType, countStr] = data.coralCost.split(':');
+    const count = parseInt(countStr);
+    const iconName = coralType.charAt(0).toUpperCase() + coralType.slice(1) + 'Coral';
+    const coralImgs = Array(count).fill(null).map((_, i) =>
+      <img className={iconName} key={`c${i}`} src={require(`../assets/icons/${iconName}.svg`)} alt={iconName}/>
+    );
+    return icons.map((icon, index) =>
+      <div key={index} style={{display:'flex',flexDirection:'row',alignItems:'center',gap:'1cqw'}}>
+        <img src={require(`../assets/icons/${icon}.svg`)} alt={icon}/>
+        {coralImgs}
+      </div>
+    );
+  }
 
   return icons.map((icon, index) => <img key={index} src={require(`../assets/icons/${icon}.svg`)} alt={icon}></img>)
 }
@@ -85,25 +103,50 @@ const getCardBackground = (data) => {
 const processAbilityText = (text, matchRows = true) => {
   // Define the regex components
   const rowRegex = "\\[(?:[^\\[\\]]+)](?:\\s*\\+\\s*\\[[^\\[\\]]+])+";
-  const iconRegex = "\\d+ ?\\[Wave\\]|[a-zA-Z0-9 ()\\+]+|\\[\\w+\\]";
+  const iconRegex = "\\d+ ?\\[Wave\\]|[a-zA-Z0-9 ()\\+,:']+|\\[[\\w-]+\\]";
   const fullRegex = matchRows
     ? new RegExp(`(${rowRegex}|${iconRegex})`, "gi")
     : new RegExp(`(${iconRegex})`, "gi");
 
-  // Use the regex in the split
-  const parts = text.split(fullRegex).filter(Boolean);
-  return parts.map((part, index) => {
+  const parts = text.split(fullRegex).filter(p => p && p.trim());
+  const mapped = parts.map((part, index) => {
     if (part.match(rowRegex))
-      return <div className="ability-row">{processAbilityText(part, false)}</div>
-    else if (part.includes("[Wave]"))
-      return <div key={index} className="ability-points">{part.split("[Wave]")[0].trim()}<img src={WaveIcon} alt="Wave"></img></div>
-
-    else if (part.includes("[")) {
-      part = part.slice(1, -1);
-      return <img className={part} key={index} src={require(`../assets/icons/${part}.svg`)} alt={part}></img>
+      return <div key={index} className="ability-row">{processAbilityText(part, false)}</div>;
+    if (part.includes("[Wave]"))
+      return <div key={index} className="ability-points">{part.split("[Wave]")[0].trim()}<img src={WaveIcon} alt="Wave"></img></div>;
+    if (part.startsWith("[") && part.endsWith("]")) {
+      const name = part.slice(1, -1);
+      return <img className={name} key={index} src={require(`../assets/icons/${name}.svg`)} alt={name}></img>;
     }
-    return <div className="ability-text" key={index}>{part.trim()}</div>
-  })
+    return <div key={index} className="ability-text">{part.trim()}</div>;
+  });
+
+  const result = [];
+  let iconRun = [];
+
+  const flushIconRun = () => {
+    if (iconRun.length > 1) {
+      const counts = {};
+      iconRun.forEach(el => { counts[el.props.className] = (counts[el.props.className] || 0) + 1; });
+      const countClasses = Object.entries(counts).map(([name, n]) => `${name}-${n}`).join(' ');
+      result.push(
+        <span key={`ig-${result.length}`} className={`icon-group ${countClasses}`}>
+          {iconRun}
+        </span>
+      );
+    } else {
+      iconRun.forEach(el => result.push(el));
+    }
+    iconRun = [];
+  };
+
+  mapped.forEach(el => {
+    if (el.type === 'img') iconRun.push(el);
+    else { flushIconRun(); result.push(el); }
+  });
+  flushIconRun();
+
+  return result;
 }
 
 const getAbility = (data) => {
@@ -117,7 +160,23 @@ const getAbility = (data) => {
 
   if (abilitiesWithBackground.includes(data.abilityType))
     style.backgroundImage = `url(${require(`../assets/backgrounds/${data.abilityType}.png`)})`
-  return <div className="ability" style={style}><div className="ability-text bold">{abilityTexts[data.abilityType]}</div> {processAbilityText(data.ability)}</div>
+
+  if (data.abilityType === 'IfActivated' && data.ability?.includes('also, if')) {
+    const alsoIfIdx = data.ability.indexOf('also, if');
+    const costPart = data.ability.substring(0, alsoIfIdx).trim();
+    const effectPart = data.ability.substring(alsoIfIdx);
+    return <>
+      <div className={`ability ${effectPart && "squished"}`} style={style}>
+        <div className="ability-text bold">{abilityTexts[data.abilityType]}</div>
+        {costPart && processAbilityText(costPart)}
+      </div>
+      <div className="ability also-if" style={style}>
+        {processAbilityText(effectPart)}
+      </div>
+    </>
+  }
+
+  return <div className="ability" style={style}><div className="ability-text bold">{abilityTexts[data.abilityType]}</div> {data.ability && processAbilityText(data.ability)}</div>
 }
 
 const addGroupMarker = (data) => {
@@ -217,6 +276,7 @@ const Card = ({ data }) => {
         {getAbility(data)}
       </div>
       <img className="silhouette" src={require(`../assets/silhouettes/${data.id}.webp`)} alt="Fish silhouette"></img>
+      {data.expansion === 'sr' && <img className="expansion-logo" src={require('../assets/icons/SRLogo.svg').default} alt="S&R"></img>}
       <div className="description">
         {data.description}
       </div>

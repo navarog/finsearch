@@ -14,6 +14,7 @@ export const ALLOWED_EMOJIS = [
     "SchoolFeederMove",
     "SchoolFish",
     "FishFromHand",
+    "FishFromHandConsume",
     "ConsumeFish",
     "Discard",
     "AllPlayers",
@@ -28,6 +29,12 @@ export const ALLOWED_EMOJIS = [
     "PlayFishBottomRow",
     "Predator",
     "Wave",
+    "AnyCoral",
+    "BlueCoral",
+    "GreenCoral",
+    "PurpleCoral",
+    "UnSchoolFish",
+    "FreePlayFishFromHand"
 ]
 
 const EmojiTextField = ({ query, setQuery, ...props }) => {

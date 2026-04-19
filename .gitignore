@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+__pycache__/
+
+new_materials/
+scripts/review_output/
+.gstack/
