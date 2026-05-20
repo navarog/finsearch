@@ -4611,7 +4611,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":null,
+    "band":"green",
     "description":"It's often seen perched, camouflaged, on a red gorgonian sea fan, waiting to make a short, fast rush at its prey.",
     "expansion":"sr",
     "coralCost":"green:2"
