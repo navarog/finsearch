@@ -3909,7 +3909,7 @@
     "Electric":1.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":"purple",
+    "band":null,
     "description":"The only shark species known to be omnivorous, its diet includes crustaceans, mollusks, small fish, and seagrass.",
     "expansion":"sr",
     "coralCost":"any:2"
@@ -3939,7 +3939,7 @@
     "band":null,
     "description":"Alongside the sharpnose sevengill (Heptranchias perlo), it's listed in the Guinness World Records as the fish with the most gill slits.",
     "expansion":"sr",
-    "coralCost":"any:1"
+    "coralCost":null
   },
   {
     "id":147,
@@ -4071,7 +4071,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":"blue",
+    "band":null,
     "description":"It can swim, but it mostly \u201cwalks\u201d along coral reefs on its fins. It can even travel short distances over land.",
     "expansion":"sr",
     "coralCost":"any:2"
@@ -4125,7 +4125,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":"purple",
+    "band":null,
     "description":"It usually hovers above its burrow, quick to dart inside. It flicks its long dorsal fin back and forth, perhaps as a signal.",
     "expansion":"sr",
     "coralCost":"any:1"
@@ -4152,7 +4152,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":null,
+    "band":"green",
     "description":"The male fish are slightly larger than the females, and the blue streaks along the fins are more apparent.",
     "expansion":"sr",
     "coralCost":"green:1"
@@ -4179,7 +4179,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":1.0,
-    "band":null,
+    "band":"green",
     "description":"During nighttime or when stressed, the foxface rabbitfish changes to a duller, mottled pattern that's harder to see.",
     "expansion":"sr",
     "coralCost":"green:2"
@@ -4395,7 +4395,7 @@
     "Electric":0.0,
     "Predator":1.0,
     "Venomous":0.0,
-    "band":"purple",
+    "band":null,
     "description":"Fast, agile, and social, they form schools near coral reef drop-offs, but these groups disperse at night.",
     "expansion":"sr",
     "coralCost":"any:2"
@@ -4773,7 +4773,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":"blue",
+    "band":null,
     "description":"Found in coral reefs and shallow waters, this bottom-feeder can generate incredible suction with its mouth.",
     "expansion":"sr",
     "coralCost":"any:2"
@@ -5421,7 +5421,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":null,
+    "band":"green",
     "description":"Seahorses and pipefishes are very similar. There are also a few known species of pipehorses, which have attributes of both.",
     "expansion":"sr",
     "coralCost":"green:2"
