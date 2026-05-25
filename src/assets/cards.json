@@ -4288,7 +4288,7 @@
     "Predator":2.0,
     "Venomous":0.0,
     "band":null,
-    "description":"Sheltering by day in crevices up to \u202850 meters deep, this nocturnal ambush predator hunts primarily by smell.",
+    "description":"Sheltering by day in crevices up to 50 meters deep, this nocturnal ambush predator hunts primarily by smell.",
     "expansion":"sr",
     "coralCost":"any:2"
   },
