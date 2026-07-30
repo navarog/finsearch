@@ -3018,7 +3018,7 @@
     "Electric":null,
     "Predator":null,
     "Venomous":null,
-    "band":null,
+    "band":"green",
     "description":"With teeth hard as metal, parrotfish eat coral and excrete sand. They also sleep in a protective cocoon of mucus.",
     "expansion":"base",
     "coralCost":null
@@ -3963,7 +3963,7 @@
     "Electric":0.0,
     "Predator":0.0,
     "Venomous":0.0,
-    "band":"blue",
+    "band":null,
     "description":"It has a varied diet, feeding on fishes, shrimps, crabs, and crustaceans, as well as plant and algae material.",
     "expansion":"sr",
     "coralCost":null
